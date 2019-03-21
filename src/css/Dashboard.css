@@ -3,7 +3,6 @@
     width: 300px;
     height: 100%;
     min-height: 100%;
-    padding: 50px 0;
     left: 0;
     top: 0;
     background: #fff;
@@ -130,3 +129,45 @@ ul.merchant {
                 color: #007bff;
             }
 
+.col-6 {
+    width: 50%;
+    display: inline-block;
+}
+
+.accordion__item .form-group {
+    max-width: 200px;
+    margin: 20px 0;
+}
+
+.accordion {
+    margin-top: 20px;
+    border: 1px solid #cbcbcb;
+}
+
+.accordion__title h4 {
+    margin: 0;
+}
+
+.accordion__title {
+    background: #00b5f4;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.accordion__arrow {
+    margin-right: 10px;
+}
+
+.accordion__title:hover {
+    background: #007bff;
+}
+
+label[for="shipping-fee"] {
+    margin-top: 30px;
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}

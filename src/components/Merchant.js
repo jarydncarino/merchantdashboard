@@ -1,54 +1,46 @@
-import React from 'react';
-import ReactModal from 'react-modal';
+import React, { Component } from 'react';
+import MerchantListItem from './MerchantListItem';
 
-function Merchant({merchants, showModal, deleteMerchant, handleOpenModal, handleCloseModal}) {
+class Merchant extends Component {
     
-    const customStyles = {
-        content : {
-          top                   : '50%',
-          left                  : '50%',
-          right                 : 'auto',
-          bottom                : 'auto',
-          marginRight           : '-50%',
-          transform             : 'translate(-50%, -50%)',
-        }
-    };
+    constructor(props) {
+        super(props);
+        this.state = { searchString: '' }
+    }
+    
+    handleChange = (e) => {
+        this.setState({ searchString:e.target.value });
+    }
 
-    const merchantList = merchants.length ? (
-        merchants.map(merchant => {
-            return (
-                <li className="merchant-item" key={merchant.id}>
-                    <span>{merchant.name}</span>
-                    <div className="action-btns">
-                        <a href="/"><i className="material-icons">edit</i></a>
-                        <a href="/" onClick={handleOpenModal}><i className="material-icons">delete</i></a>
-                    </div>
-                    <ReactModal 
-                        isOpen={showModal}
-                        contentLabel="Delete Merchant"
-                        style={customStyles}
-                        onRequestClose={handleCloseModal}
-                        overlayClassName="Overlay"
-                        >
-                        <span>{merchant.id}</span>
-                        <h3>Delete Merchant</h3>
-                        <p>Are you sure you want to delete this merchant?</p>
-                        <div className="button-wrap">
-                            <button className="btn btn-secondary" onClick={handleCloseModal}>No</button>
-                            <button className="btn btn-primary" onClick={() => {deleteMerchant(merchant.id); handleCloseModal()}}>Yes</button>
-                        </div>
-                    </ReactModal>
-                </li>
-            )
-        })
-    ) : (
-        <p className="center">No data available</p>
-    )
-    return (
-        <ul className="merchant">
-            { merchantList }
-        </ul>
-    )
+    
+    
+    render() {
+        var merchants = this.props.merchants,
+            searchString = this.state.searchString.trim().toLowerCase();
+        if (searchString.length > 0) {
+            merchants = merchants.filter(function(i) {
+                return i.name.toLowerCase().match( searchString );
+            });
+        }
+        const merchantList = this.props.merchants.length ? (
+            merchants.map(merchant => {
+                return (
+                    <MerchantListItem key={merchant.id} id={merchant.id} name={merchant.name} metro={merchant.metro} intra={merchant.intra} provincial={merchant.provincial} box={merchant.box} oversized={merchant.oversized} bigPouch={merchant.bigPouch} smallPouch={merchant.smallPouch} deleteMerchant={this.props.deleteMerchant} editMerchant={this.props.editMerchant}/>
+                )
+            })
+        ) : (
+            <p className="center">No data available</p>
+        )
+        return (
+            <div>
+            <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here..."/>
+            <ul className="merchant">
+                { merchantList }
+            </ul>
+            </div>
+        )
+    }
+    
 }
 
 export default Merchant;
