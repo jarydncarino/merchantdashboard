@@ -1,0 +1,132 @@
+.leftNav {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    min-height: 100%;
+    padding: 50px 0;
+    left: 0;
+    top: 0;
+    background: #fff;
+    border-right: 1px solid #eaeaea;
+}
+
+.content-container {
+    padding-left: 300px;
+    background: #f2f2f2;
+}
+
+ul.nav * {
+    transition: all 0.2s ease-in-out;
+}
+
+ul.nav {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin-top: 50px;
+}
+
+    ul.nav li a {
+        padding: 20px 50px;
+        color: #000;
+        font-size: 18px;
+        display: block;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        ul.nav li a i {
+            display: inline-block;
+            vertical-align: text-bottom;
+            margin-right: 10px;
+            color: #a9afbb;
+        }
+
+    ul.nav li:hover a {
+        background: #06a9f4;
+        color: #fff;
+    }
+
+        ul.nav li:hover a i {
+            color: #fff;
+        }
+
+.top-bar {
+    border-bottom: 1px solid #c3c3c3;
+    padding: 10px;
+    text-align: right;
+}
+
+    .top-bar span, .top-bar a {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 20px;
+    }
+
+.white-container {
+    background: #fff;
+    padding: 30px 50px;
+    min-height: 800px;
+    border-radius: 10px;
+    border-top: 5px solid #cccccc;
+    color: #333;
+    margin: 20px;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: center;
+}
+
+    .title-wrap h1 {
+        display: inline-block;
+        width: 50%;
+    }
+
+    .add-merchant {
+        margin: 0 0 0 auto;
+        text-decoration: none;
+    }
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3)
+}
+
+.button-wrap {
+    text-align: right;
+}
+
+ul.merchant {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+    ul.merchant li {
+        padding: 10px 0;
+        display: flex;
+        border-bottom: 1px solid #dee2e6;
+        align-items: center;
+    }
+
+        ul.merchant li span {
+            display: inline-block;
+            width: 50%;
+        }
+
+        .action-btns {
+            display: inline-block;
+            width: 50%;
+            text-align: right;
+        }
+
+            .action-btns a {
+                margin-left: 10px;
+                color: #007bff;
+            }
+
