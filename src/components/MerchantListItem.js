@@ -40,14 +40,12 @@ class MerchantListItem extends Component {
         }
 
         return (
-            <div>
-                <li className="merchant-item">
-                    <span>{this.props.name}</span>
-                    <div className="action-btns">
-                        <Link to={{pathname: '/editMerchant', state: { merchantItem: this.props.param } }}><i className="material-icons">edit</i></Link>
-                        <a href="/" onClick={this.handleOpenModal}><i className="material-icons">delete</i></a>
-                    </div>
-                </li>
+            <li className="merchant-item">
+                <span>{this.props.name}</span>
+                <div className="action-btns">
+                    <Link to={{pathname: '/editMerchant', state: { merchantItem: this.props.param } }}><i className="material-icons">edit</i></Link>
+                    <a href="/" onClick={this.handleOpenModal}><i className="material-icons">delete</i></a>
+                </div>
                 <ReactModal 
                     isOpen={this.state.showModal}
                     contentLabel="Delete Merchant"
@@ -62,7 +60,7 @@ class MerchantListItem extends Component {
                         <button className="btn btn-primary" onClick={() => {this.props.deleteMerchant(this.props.id); this.handleCloseModal()}}>Yes</button>
                     </div>
                 </ReactModal>
-            </div>
+            </li>
             
         )
     }

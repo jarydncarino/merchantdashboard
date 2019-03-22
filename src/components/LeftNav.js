@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../logo.png';
+import logo from '../img/dashboard-logo.png';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const LeftNav = (props) => {
