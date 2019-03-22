@@ -7,18 +7,18 @@ import {
     Accordion,
     AccordionItem,
     AccordionItemTitle,
-    AccordionItemBody,
+    AccordionItemBody
 } from 'react-accessible-accordion';
 
 class AddMerchant extends Component {
 
-    handleChange = (e) => {
+    handleChange = e => {
         this.setState({
             [e.target.id]: e.target.value
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = e => {
         e.preventDefault();
         this.props.addMerchant(this.state);
         this.props.history.push('/');
@@ -54,8 +54,8 @@ class AddMerchant extends Component {
                             <div className="col-6">
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='box'
-                                        name='box'
+                                        id='metroBox'
+                                        name='metroBox'
                                         placeholder='Box'
                                         type='text'
                                         onChange={this.handleChange}
@@ -63,8 +63,8 @@ class AddMerchant extends Component {
                                 </div>    
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='bigPouch'
-                                        name='bigPouch'
+                                        id='metroBigPouch'
+                                        name='metroBigPouch'
                                         placeholder='Big Pouch'
                                         type='text'
                                         onChange={this.handleChange}
@@ -74,8 +74,8 @@ class AddMerchant extends Component {
                             <div className="col-6">
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='oversized'
-                                        name='oversized'
+                                        id='metroOversized'
+                                        name='metroOversized'
                                         placeholder='Oversized'
                                         type='text'
                                         onChange={this.handleChange}
@@ -83,8 +83,8 @@ class AddMerchant extends Component {
                                 </div>    
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='smallPouch'
-                                        name='smallPouch'
+                                        id='metroSmallPouch'
+                                        name='metroSmallPouch'
                                         placeholder='Small Pouch'
                                         type='text'
                                         onChange={this.handleChange}
@@ -102,8 +102,8 @@ class AddMerchant extends Component {
                         <div className="col-6">
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='box'
-                                        name='box'
+                                        id='provincialBox'
+                                        name='provincialBox'
                                         placeholder='Box'
                                         type='text'
                                         onChange={this.handleChange}
@@ -111,8 +111,8 @@ class AddMerchant extends Component {
                                 </div>    
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='bigPouch'
-                                        name='bigPouch'
+                                        id='provincialBigPouch'
+                                        name='provincialBigPouch'
                                         placeholder='Big Pouch'
                                         type='text'
                                         onChange={this.handleChange}
@@ -122,8 +122,8 @@ class AddMerchant extends Component {
                             <div className="col-6">
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='oversized'
-                                        name='oversized'
+                                        id='provincialOversized'
+                                        name='provincialOversized'
                                         placeholder='Oversized'
                                         type='text'
                                         onChange={this.handleChange}
@@ -131,8 +131,8 @@ class AddMerchant extends Component {
                                 </div>    
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='smallPouch'
-                                        name='smallPouch'
+                                        id='provincialSmallPouch'
+                                        name='provincialSmallPouch'
                                         placeholder='Small Pouch'
                                         type='text'
                                         onChange={this.handleChange}
@@ -150,8 +150,8 @@ class AddMerchant extends Component {
                         <div className="col-6">
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='box'
-                                        name='box'
+                                        id='intraBox'
+                                        name='intraBox'
                                         placeholder='Box'
                                         type='text'
                                         onChange={this.handleChange}
@@ -159,8 +159,8 @@ class AddMerchant extends Component {
                                 </div>    
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='bigPouch'
-                                        name='bigPouch'
+                                        id='intraBigPouch'
+                                        name='intraBigPouch'
                                         placeholder='Big Pouch'
                                         type='text'
                                         onChange={this.handleChange}
@@ -170,8 +170,8 @@ class AddMerchant extends Component {
                             <div className="col-6">
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='oversized'
-                                        name='oversized'
+                                        id='intraOversized'
+                                        name='intraOversized'
                                         placeholder='Oversized'
                                         type='text'
                                         onChange={this.handleChange}
@@ -179,8 +179,8 @@ class AddMerchant extends Component {
                                 </div>    
                                 <div className="form-group">
                                     <FloatingLabel
-                                        id='smallPouch'
-                                        name='smallPouch'
+                                        id='intraSmallPouch'
+                                        name='intraSmallPouch'
                                         placeholder='Small Pouch'
                                         type='text'
                                         onChange={this.handleChange}

@@ -4,25 +4,34 @@ import {
     Accordion,
     AccordionItem,
     AccordionItemTitle,
-    AccordionItemBody,
+    AccordionItemBody
 } from 'react-accessible-accordion';
 
 class EditMerchant extends Component {
 
-    handleChange = (e) => {
+    constructor(props) {
+        super(props);
+        this.merchantItem = props.param.location.state.merchantItem;
+    }
+
+    handleChange = e => {
+        let merchantItem = this.merchantItem;
+        let name = e.target.id;
+        let value = e.target.value;
+
+        this.merchantItem[name] = value;
+
         this.setState({
-            [e.target.id]: e.target.value
+            merchantItem
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = e => {
         e.preventDefault();
-        this.props.editMerchant(this.state);
-        this.props.history.push('/');
+        this.props.param.history.push('/');
     }
 
     render() {
-        console.log(this.props)
         return (
             <div className="white-container">
                 <div className="title-wrap">
@@ -37,6 +46,7 @@ class EditMerchant extends Component {
                                 placeholder='Merchant Name'
                                 type='text'
                                 onChange={this.handleChange}
+                                value={this.merchantItem.name}
                                 />
                         </div>
                     </div> 
@@ -51,40 +61,44 @@ class EditMerchant extends Component {
                                 <div className="col-6">
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='box'
-                                            name='box'
+                                            id='metroBox'
+                                            name='metroBox'
                                             placeholder='Box'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.metroBox}
                                             />
                                     </div>    
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='bigPouch'
-                                            name='bigPouch'
+                                            id='metroBigPouch'
+                                            name='metroBigPouch'
                                             placeholder='Big Pouch'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.metroBigPouch}
                                             />
                                     </div>    
                                 </div>  
                                 <div className="col-6">
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='oversized'
-                                            name='oversized'
+                                            id='metroOversized'
+                                            name='metroOversized'
                                             placeholder='Oversized'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.metroOversized}
                                             />
                                     </div>    
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='smallPouch'
-                                            name='smallPouch'
+                                            id='metroSmallPouch'
+                                            name='metroSmallPouch'
                                             placeholder='Small Pouch'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.metroSmallPouch}
                                             />
                                     </div>    
                                 </div> 
@@ -99,40 +113,44 @@ class EditMerchant extends Component {
                             <div className="col-6">
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='box'
-                                            name='box'
+                                            id='provincialBox'
+                                            name='provincialBox'
                                             placeholder='Box'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.provincialBox}
                                             />
                                     </div>    
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='bigPouch'
-                                            name='bigPouch'
+                                            id='provincialBigPouch'
+                                            name='provincialBigPouch'
                                             placeholder='Big Pouch'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.provincialBigPouch}
                                             />
                                     </div>    
                                 </div>  
                                 <div className="col-6">
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='oversized'
-                                            name='oversized'
+                                            id='provincialOversized'
+                                            name='provincialOversized'
                                             placeholder='Oversized'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.provincialOversized}
                                             />
                                     </div>    
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='smallPouch'
-                                            name='smallPouch'
+                                            id='provincialSmallPouch'
+                                            name='provincialSmallPouch'
                                             placeholder='Small Pouch'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.provincialSmallPouch}
                                             />
                                     </div>    
                                 </div> 
@@ -147,40 +165,44 @@ class EditMerchant extends Component {
                             <div className="col-6">
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='box'
-                                            name='box'
+                                            id='intraBox'
+                                            name='intraBox'
                                             placeholder='Box'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.intraBox}
                                             />
                                     </div>    
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='bigPouch'
-                                            name='bigPouch'
+                                            id='intraBigPouch'
+                                            name='intraBigPouch'
                                             placeholder='Big Pouch'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.intraBigPouch}
                                             />
                                     </div>    
                                 </div>  
                                 <div className="col-6">
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='oversized'
-                                            name='oversized'
+                                            id='intraOversized'
+                                            name='intraOversized'
                                             placeholder='Oversized'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.intraOversized}
                                             />
                                     </div>    
                                     <div className="form-group">
                                         <FloatingLabel
-                                            id='smallPouch'
-                                            name='smallPouch'
+                                            id='intraSmallPouch'
+                                            name='intraSmallPouch'
                                             placeholder='Small Pouch'
                                             type='text'
                                             onChange={this.handleChange}
+                                            value={this.merchantItem.intraSmallPouch}
                                             />
                                     </div>    
                                 </div> 

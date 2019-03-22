@@ -10,7 +10,7 @@ class Dashboard extends Component {
                     <h1>List of Merchants</h1>
                     <Link to='/addMerchant' className="btn btn-primary add-merchant"><i className="material-icons">add_circle</i>Add Merchant</Link>
                 </div>
-                <Merchant merchants={this.props.merchants} deleteMerchant={this.props.deleteMerchant} editMerchant={this.props.editMerchant}/>
+                <Merchant merchants={this.props.merchants} deleteMerchant={this.props.deleteMerchant} searchString={this.props.searchString}/>
 
             </div>
         )
