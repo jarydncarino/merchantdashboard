@@ -6,6 +6,11 @@
     left: 0;
     top: 0;
     background: #007bff;
+    transition: 0.5s all ease-in-out;
+}
+
+.openMenu .leftNav {
+    left: -300px;
 }
 
     .leftNav .logo-wrap {
@@ -16,6 +21,11 @@
 .content-container {
     padding-left: 300px;
     background: #f2f2f2;
+    transition: 0.5s all ease-in-out;
+}
+
+.openMenu .content-container {
+    padding-left: 0;
 }
 
 ul.nav * {
@@ -270,7 +280,17 @@ label[for="shipping-fee"] {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .leftNav {
+        left: -300px;
+    }
 
+    .content-container {
+        padding-left: 0;
+    }
+
+    .openMenu .leftNav {
+        left: 0;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

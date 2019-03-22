@@ -29,6 +29,7 @@ class App extends Component {
           { id: 10, name: 'Merchant 10', metroBox: '10m',metroOversized: '10m',metroBigPouch: '10m',metroSmallPouch: '10m',provincialBox: '10p',provincialOversized: '10p',provincialBigPouch: '10p',provincialSmallPouch: '10p',intraBox: '10i',intraOversized: '10i',intraBigPouch: '10i',intraSmallPouch: '10i' }
         ],
         searchString: '',
+        isMenuOpen: false
       }
   }
 
@@ -69,19 +70,27 @@ class App extends Component {
     });
   }
 
+  toggle = e => {
+    e.preventDefault();
+    this.setState({isMenuOpen: !this.state.isMenuOpen});
+  }
+
   render() {
-    console.log(this.state.merchants)
+    let dashboardClass = ["dashboard"];
+    if(this.state.isMenuOpen) {
+      dashboardClass.push('openMenu');
+    }
     return (
       <div className="App">
         { 
           (this.state.user) ? 
             <BrowserRouter>
-              <div className="dashboard">
+              <div className={dashboardClass.join(' ')}>
                 <LeftNav />
                 <div className="content-container">
                   <div className="top-bar">
                     <div className="tb-left">
-                      <a href="/" className="menu-bar"><i class="material-icons">menu</i></a>
+                      <a href="/" className="menu-bar" onClick={this.toggle.bind(this)}><i class="material-icons">menu</i></a>
                       <Search searchString={this.state.searchString} handleSearch={this.handleSearch.bind(this)}/>
                     </div>
                     <div className="tb-right">
