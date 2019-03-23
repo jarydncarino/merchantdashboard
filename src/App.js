@@ -75,6 +75,7 @@ class App extends Component {
     this.setState({isMenuOpen: !this.state.isMenuOpen});
   }
 
+
   render() {
     let dashboardClass = ["dashboard"];
     if(this.state.isMenuOpen) {
@@ -86,11 +87,11 @@ class App extends Component {
           (this.state.user) ? 
             <BrowserRouter>
               <div className={dashboardClass.join(' ')}>
-                <LeftNav />
+                <LeftNav toggleClose={this.toggle.bind(this)}/>
                 <div className="content-container">
                   <div className="top-bar">
                     <div className="tb-left">
-                      <a href="/" className="menu-bar" onClick={this.toggle.bind(this)}><i class="material-icons">menu</i></a>
+                      <a href="/" className="menu-bar" onClick={this.toggle.bind(this)}><i className="material-icons">menu</i></a>
                       <Search searchString={this.state.searchString} handleSearch={this.handleSearch.bind(this)}/>
                     </div>
                     <div className="tb-right">
